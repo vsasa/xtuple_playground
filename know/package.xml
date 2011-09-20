@@ -1,0 +1,34 @@
+<!DOCTYPE packageManagerDef>
+<package version="1.2" id="know"
+         name="know"
+         developer="hernad@bring.out.ba" >
+ <prerequisite type="Query" name="Provjera xtpos je instaliran">
+  <query>
+			select count(*) = 1 from pkghead where pkghead_name = 'xtpos'
+		</query>
+  <message>
+			xtpos mora biti instaliran
+		</message>
+ </prerequisite>
+
+ <prerequisite type="Query" name="Test xTuple ERP version">
+  <query>
+		SELECT (SUBSTRING(fetchMetricText('ServerVersion') FOR 3) = '3.8'
+			AND SUBSTRING(fetchMetricText('ServerVersion') FROM 5 FOR 1) >= '0');
+		</query>
+  <message>
+		This version of the xtpos package only works with xTuple ERP
+		versions 3.7.0 and greater.
+		</message>
+ </prerequisite>
+
+
+ <prerequisite type="License" name="sampleLicense">
+  <message>Koristi kako hoces</message>
+ </prerequisite>
+
+ <script onerror="Prompt" file="db/func_know_test.sql"/>
+ <script onerror="Prompt" file="db/createTerminal.sql"/>
+
+
+</package>
