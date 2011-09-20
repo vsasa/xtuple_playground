@@ -1,7 +1,8 @@
-= xtuple example package
+xtuple example package
+========================
 
-
-== knowhow xtuple package
+knowhow xtuple package
+-----------------------
 
 <pre>
 know/
@@ -31,7 +32,8 @@ sa updater-om se paket instalira.
 Konkretno, kreira se know schema (u package.xml vidi name='know'), jedna tabela (know.terminal) stored procedura know.test_terminal
 
 
-== test
+test
+------
  
 ```
 insert into know.terminal(terminal_id, terminal_number, terminal_note, terminal_closed) 
