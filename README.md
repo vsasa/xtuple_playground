@@ -42,6 +42,8 @@ values(2, 'dva', 'bilješka 2', true)
 ```
 
 ```select know.test_terminal(1)``` => f
+
 ```select know.test_terminal(2)``` => t
+
 ```select know.test_terminal(3)``` => ERROR:  terminal with given number not found.
 
