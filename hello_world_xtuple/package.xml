@@ -1,9 +1,9 @@
-<package id="hello_world"
-         name="hello_world"
+<package id="hello_world_xtuple"
+         name="xthelloworld"
          developer="vsasa@bring.out.ba"
          descrip="Testing xtuple packages"
-         version="1.0.0"
-         updater="2.2.0">
+         version="1.0.1"
+         updater="2.2.4">
   <pkgnotes>testing...</pkgnotes>
 
   <prerequisite type="Query"
@@ -24,7 +24,7 @@
       SELECT COUNT(*) &lt;= 0
       FROM (SELECT *
             FROM pkghead
-            WHERE (pkghead_name = 'hello_world') ) AS dummy;
+            WHERE (pkghead_name = 'xthelloworld') ) AS dummy;
     </query>
     <message>
 	  xTuple hello_world paket je već instaliran, uklonite ga ili odradite upgrade.
@@ -45,15 +45,11 @@
     </message>
   </prerequisite>
 
-  <loadpriv name="ViewHelloWorld" module="hello_world">
-   Dozvoljava pregled hello_world
-  </loadpriv>  
+  <script file="database/misc/schemaComment.sql" />
 
-  <loadpriv name="MaintainHelloWorld" module="hello_world">
-   Dozvoljava sve operacije nad hello_world
-  </loadpriv>
+  <createtable file="database/tables/tbl_suban.sql" name="fin_suban"/>
 
-  <createview file="database/views/vw_list_all.sql" name="vw_list_all"/>
+  <createview file="database/views/vw_list_all.sql" name="vw_listallsuban"/>
 
   <loadappscript file="client/scripts/subanReport.js" name="subanReport" order="0"/>
   <loadappscript file="client/scripts/initMenu.js" name="initMenu" order="1"/>
