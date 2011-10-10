@@ -1,0 +1,7 @@
+-- Group: rpt
+-- Name: getbydate
+-- Notes:
+
+SELECT *
+FROM xthelloworld.fin_suban 
+WHERE (datdok >= <? value("date_from") ?> AND datdok <= <? value("date_to") ?>); 

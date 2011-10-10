@@ -1,0 +1,7 @@
+-- Group: rpt
+-- Name: getbykto
+-- Notes:
+
+SELECT *
+FROM xthelloworld.fin_suban 
+WHERE (idkonto LIKE <? value("id_konto") ?> ); 
