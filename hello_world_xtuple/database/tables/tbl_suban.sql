@@ -29,5 +29,4 @@ CREATE TABLE xthelloworld.fin_suban
 
 GRANT ALL ON TABLE xthelloworld.fin_suban TO xtrole;
 
-ALTER TABLE xthelloworld.fin_suban OWNER TO xtrole;
 

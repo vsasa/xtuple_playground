@@ -12,7 +12,7 @@ var _idKonto = mywindow.findChild("_idKonto");
 
 // Terminal list connections
 _btnCancel.clicked.connect(mywindow, "close");
-_btnOk.clicked.connect(generateReport);
+_btnOk.clicked.connect(fill_data);
 
 with (_view)
 {
@@ -29,14 +29,27 @@ with (_view)
 function generateReport() {
 
     var params = new Object;
+    toolbox.printReport("ListAllSuban", params);
+
+};
+
+
+function fill_data() {
+
+    var params = new Object;
     //params.date_from = _dateFrom.date;
     //params.date_to = _dateTo.date;
     //params.id_konto = _idKonto.text;
 
+    if (hasData()) {
+        _lblStatus.text = "Status: ima zapisa";
+    };
+
     var data = toolbox.executeQuery("SELECT * FROM xthelloworld.fin_suban", params);
     try
     {
-       _view.populate(data);
+       //_view.populate(data);
+        _lblStatus.text = "Status: " + data.value("idfirma");
     }
     catch (e)
     {
@@ -45,3 +58,20 @@ function generateReport() {
     };
 
 };
+
+
+function hasData()
+{
+  var cparam = new Object();
+  var data = toolbox.executeQuery('SELECT count(*) as count FROM xthelloworld.fin_suban', cparam);
+  if (data.first())
+  {
+   if (data.value("count") > 0)
+   {
+     return true;
+   } else {
+     return false;
+   }
+  }
+}
+
