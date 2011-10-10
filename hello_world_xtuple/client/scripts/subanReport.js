@@ -7,29 +7,37 @@ var _lblStatus = mywindow.findChild("_lblStatus");
 var _view = mywindow.findChild("_view");
 var _idKonto = mywindow.findChild("_idKonto");
 
+with (_view)
+{
+   setColumn("Firma",  20, 1, true, "idfirma");
+   setColumn("Vrsta naloga",  20, 1, true, "idvn");
+   setColumn("Broj naloga",  20, 1, true, "brnal");
+   setColumn("Id konto",  40, 1, true, "idkonto");
+}
+
+//toolbox.messageBox("critical", mywindow, mywindow.windowTitle, "created");
+
 //_dateFrom.date = DATE();
 //_dateTo.date = DATE();
 
 // Terminal list connections
 _btnCancel.clicked.connect(mywindow, "close");
-_btnOk.clicked.connect(fill_data);
+_btnOk.clicked.connect(generateReport);
 
-with (_view)
-{
-    addColumn("Firma",  10, 1, true, "idfirma");
-    addColumn("Vrsta naloga",  10, 1, true, "idvn");
-    addColumn("Broj naloga",  20, 1, true, "brnal");
-    addColumn("Datum",  30, 1, true, "datdok");
-    addColumn("D-P",  10, 1, true, "d_p");
-    addColumn("Iznos",  40, 1, true, "iznosbhd");
-};
 
 
 // generate report main function
 function generateReport() {
 
     var params = new Object;
-    toolbox.printReport("ListAllSuban", params);
+    params.date_from = _dateFrom.date;
+    params.date_to = _dateTo.date;
+
+    if (_idKonto.text != '') {
+        params.id_konto = _idKonto.text;
+    };
+
+    toolbox.printReport("getSubanSpec", params);
 
 };
 
@@ -45,11 +53,11 @@ function fill_data() {
         _lblStatus.text = "Status: ima zapisa";
     };
 
-    var data = toolbox.executeQuery("SELECT * FROM xthelloworld.fin_suban", params);
+    var data = toolbox.executeQuery("SELECT idfirma, idvd as idvd, brnal as brnal, idkonto as idkonto FROM xthelloworld.fin_suban LIMIT 10");
     try
     {
-       //_view.populate(data);
-        _lblStatus.text = "Status: " + data.value("idfirma");
+      _view.populate(data);
+       toolbox.messageBox("critical", mywindow, mywindow.windowTitle, "populating");
     }
     catch (e)
     {

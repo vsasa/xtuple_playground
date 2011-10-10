@@ -107,7 +107,7 @@ to be bound by its terms.</comment>
      <string>Konto:</string>
     </property>
    </widget>
-   <widget class="QTreeWidget" name="_view">
+   <widget class="XTreeView" name="_view">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -116,11 +116,6 @@ to be bound by its terms.</comment>
       <height>192</height>
      </rect>
     </property>
-    <column>
-     <property name="text">
-      <string notr="true">1</string>
-     </property>
-    </column>
    </widget>
   </widget>
   <widget class="QPushButton" name="_btnOk">
@@ -163,6 +158,13 @@ to be bound by its terms.</comment>
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>XTreeView</class>
+   <extends>QTreeView</extends>
+   <header>xtreeview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
