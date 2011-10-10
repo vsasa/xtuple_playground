@@ -58,5 +58,10 @@
   
   <loadmetasql file="client/metasql/rpt-getbydate.mql" />
   <loadmetasql file="client/metasql/rpt-getbykto.mql" />
+  <loadmetasql file="client/metasql/rpt-subanspec.mql" />
+
+  <loadreport  file="client/reports/getAllSubanData.xml" />
+  <loadreport  file="client/reports/subanSpec.xml" />
+
  
 </package>
