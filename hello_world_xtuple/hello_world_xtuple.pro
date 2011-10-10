@@ -1,9 +1,14 @@
 OTHER_FILES += \
     Sources/initMenu.js \
-    Sources/subanReport.js
+    Sources/subanReport.js \
+    client/scripts/subanReport.js \
+    client/scripts/initMenu.js
 
 FORMS += \
-    Forms/subanReport.ui
+    client/uiforms/subanReport.ui
+
+
+
 
 
 

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Moj prozor</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -34,6 +34,9 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="displayFormat">
+     <string>dd/MM/yyyy</string>
+    </property>
    </widget>
    <widget class="QDateEdit" name="dateFrom">
     <property name="geometry">
@@ -43,6 +46,9 @@
       <width>110</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="displayFormat">
+     <string>dd/MM/yyyy</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">

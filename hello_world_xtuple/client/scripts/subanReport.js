@@ -1,20 +1,25 @@
 // Find controls...
-var btnClose = mywindow.findChild("btnClose");
+var btnCancel = mywindow.findChild("btnCancel");
 var btnOk = mywindow.findChild("btnOk");
 var dateFrom = mywindow.findChild("dateFrom");
 var dateTo = mywindow.findChild("dateTo");
 
-dateFrom.date = DATE();
-dateTo.date = DATE();
+//dateFrom.date = DATE();
+//dateTo.date = DATE();
 
 
 // Terminal list connections
-btnClose.clicked.connect(mywindow, "close");
+btnCancel.clicked.connect(mywindow, "close");
 btnOk.clicked.connect(generateReport);
 
 
 // generate report main function
 function generateReport() {
-    alert("generišem report...");
-    return;
+    if (btnCancel.enabled) {
+        btnCancel.enabled = false;
+    }
+    else
+    {
+        btnCancel.enabled = true;
+    };
 };
