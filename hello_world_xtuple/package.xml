@@ -2,7 +2,7 @@
          name="xthelloworld"
          developer="vsasa@bring.out.ba"
          descrip="Testing xtuple packages"
-         version="1.0.2"
+         version="0.5.0"
          updater="2.2.4">
   <pkgnotes>testing...</pkgnotes>
 
@@ -34,13 +34,14 @@
   <prerequisite type="license" name="xTuple Concise EULA">
     <message>
       &lt;p>
-          This file is part of the Fixed Asset package for xTuple ERP: PostBooks Edition,
-          a free and open source Enterprise Resource Planning software suite,
-          Copyright (c) 2010 by Anderson.NET New Zealand.
+          This file is part of the knowhow ERP, a free and open source
+          Enterprise Resource Planning software suite,
+          Copyright (c) 2010-2011 by bring.out doo Sarajevo.
           It is licensed to you under the Common Public Attribution License
-          version 1.0, the full text of which (including xTuple-specific Exhibits)
-          is available at www.xtuple.com/CPAL.  By using this software, you agree
-          to be bound by its terms.
+          version 1.0, the full text of which (including knowhow-specific Exhibits)
+          is available in the file LICENSE_CPAL_bring.out_knowhow.md located at the
+          root directory of this source code archive.
+          By using this software, you agree to be bound by its terms.
       &lt;/p>
     </message>
   </prerequisite>
